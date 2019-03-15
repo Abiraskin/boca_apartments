@@ -1,4 +1,4 @@
-class BocaApartment::Controler
+class BocaApartment::CLI
 
   def call
     list apartments
@@ -7,7 +7,7 @@ class BocaApartment::Controler
 
   def list_apartments
     puts "See a list of apartment floorplans"
-    Website scraper here
+    @floorplans = BocaApartments::Scraper
   end
 
   def menu
