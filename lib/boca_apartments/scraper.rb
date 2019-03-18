@@ -1,3 +1,5 @@
+require 'pry'
+
 class BocaApartment::Scraper
   attr_accessor :name, :bed, :bath, :sqaure_ft, :price
 
@@ -14,6 +16,7 @@ class BocaApartment::Scraper
     doc = Nokogiri::HTML(open("https://www.miznercourtapts.com/home.aspx"))
 
     floorplan = self.new
+    binding.pry
     floorplan.name =
     floorplan.bed =
     floorplan.bath =

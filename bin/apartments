@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require './lib/apartments'
+require '../lib/boca_apartments'
 
-BocaApartments::Apartments.new.call
+BocaApartments::CLI.new.call
