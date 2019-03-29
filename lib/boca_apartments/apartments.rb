@@ -1,4 +1,4 @@
-class BocaApartment::Apartments
+class BocaApartments::Apartments
 
   attr_accessor :name, :bed, :bath, :sqaure_ft, :price
 
@@ -22,7 +22,4 @@ class BocaApartment::Apartments
   def self.all
     @@all
   end
-
-
-
-    
+end

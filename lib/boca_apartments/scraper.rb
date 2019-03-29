@@ -1,6 +1,6 @@
 require 'pry'
 
-class BocaApartment::Scraper
+class BocaApartments::Scraper
   attr_accessor :name, :bed, :bath, :sqaure_ft, :price
 
   def self.list
@@ -13,17 +13,19 @@ class BocaApartment::Scraper
   end
 
   def self.scrape
-    doc = Nokogiri::HTML(open("https://www.miznercourtapts.com/home.aspx"))
+    doc = Nokogiri::HTML(open("https://www.miznercourtapts.com/floor-plans.aspx"))
 
-    floorplan = self.new
+    doc.css(".floorplan-block").collect do |f|
+      floorplan = BocaApartments::Apartment.new
     binding.pry
-    floorplan.name =
-    floorplan.bed =
-    floorplan.bath =
-    floorplan.sqaure_ft =
-    floorplan.price =
+      floorplan.name = f.attributes["data-floorplan-name"].value
+      floorplan.bed =
+      floorplan.bath =
+      floorplan.sqaure_ft =
+      floorplan.price =
+      floorplan
+    end
 
-    floorplan
   end
 
 end

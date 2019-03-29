@@ -1,4 +1,4 @@
-class BocaApartment::CLI
+class BocaApartments::CLI
 
 
   def call
@@ -9,7 +9,7 @@ class BocaApartment::CLI
 
   def list_floorplans
     puts "See below a list of apartment floorplans and styles, listed by name:"
-    @floorplans = BocaApartments::CLI.list
+    @floorplans = BocaApartments::Scraper.list
     @floorplans.each.with.index(1) do |floorplan, i|
       puts "#{i}. #{floorplan.name} - #{floorplan.bed} - #{floorplan.bath} - #{floorplan.sqaure_ft} - #{floorplan.price}."
     end
